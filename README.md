@@ -5,14 +5,14 @@ My monochromatic rice for BSPWM on arch linux, complete with: Custom GTK theme, 
 ![alt text](https://raw.githubusercontent.com/Juicyexe/arch-monochrome/main/img/fuckingfinally.png?raw=true)
 
 # System Info
-Distro: Arch
-Shell: Fish
-Terminal Emulator: Kitty
-File Manager: Thunar
-Menus: Rofi
-Web Browser: Firefox
-WM/DE: BSPWM
-GTK Theme: Custom
+* Distro: Arch
+* Shell: Fish
+* Terminal Emulator: Kitty
+* File Manager: Thunar
+* Menus: Rofi
+* Web Browser: Firefox
+* WM/DE: BSPWM
+* GTK Theme: Custom
 
 
 
