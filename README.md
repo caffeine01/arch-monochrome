@@ -8,6 +8,7 @@ My monochromatic rice for BSPWM on arch linux, complete with: Custom GTK theme, 
 * Distro: Arch
 * Shell: Fish
 * Terminal Emulator: Kitty
+* Text Editor: neovim/vim
 * File Manager: Thunar
 * Menus: Rofi
 * Web Browser: Firefox
@@ -18,6 +19,6 @@ My monochromatic rice for BSPWM on arch linux, complete with: Custom GTK theme, 
 
 # Dependencies
 ```
-sudo pacman -Sy polybar rofi picom firefox thunar mpd cava bspwm sxhkd ncmpcpp kitty fish
+sudo pacman -Sy polybar rofi picom firefox thunar mpd cava bspwm sxhkd ncmpcpp kitty fish neovim
 yay -S betterdiscordctl-git
 ```
