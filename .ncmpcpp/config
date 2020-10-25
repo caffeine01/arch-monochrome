@@ -1,0 +1,67 @@
+##
+# Files
+ mpd_music_dir = "~/Music"  
+ lyrics_directory  = ~/.ncmpcpp/lyrics
+ ncmpcpp_directory  = ~/.ncmpcpp
+ mpd_host = "localhost"
+ mpd_port = "6600"  
+ mpd_connection_timeout = "5"  
+ mpd_crossfade_time = "5"  
+
+visualizer_in_stereo = "no"
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_sync_interval = "10"
+visualizer_type = "spectrum"
+visualizer_look = " █"
+
+visualizer_color = white
+
+message_delay_time = "3"
+playlist_shorten_total_times = "yes"
+playlist_display_mode = "columns"
+browser_display_mode = "columns"
+search_engine_display_mode = "columns"
+playlist_editor_display_mode = "columns"
+autocenter_mode = "yes"
+centered_cursor = "yes"
+user_interface = "classic"
+follow_now_playing_lyrics = "yes"
+locked_screen_width_part = "60"
+display_bitrate = "no"
+external_editor = "nano"
+
+main_window_highlight_color = "white"
+
+progressbar_elapsed_color = "white"
+progressbar_color = "black"
+
+progressbar_look = "─ "
+
+mouse_support = "yes"
+header_visibility = "no"
+statusbar_visibility = "no"
+
+statusbar_color = "green"
+titles_visibility = "no"
+enable_window_title = "yes"
+
+now_playing_prefix = "$b"
+now_playing_suffix = "$8$/b"
+#now_playing_prefix = "$u$2"
+#now_playing_suffix = "$2$/u$2"
+
+song_columns_list_format = "(33)[white]{a} (7)[]{} (33)[white]{t|f} (33)[white]{lr}"
+
+#song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
+
+color1 = "white"
+color2 = "black"
+
+"song_list_format = " $6%t $7$R%a                                    "
+
+
+#song_list_format = "$6{%a »$4 %t$/r$R}|{%f}"
+
+song_status_format = "$b$7♫ $2%a $4⟫$3⟫ $8%t $4⟫$3⟫ $5%b "
+song_window_title_format = " {%a} - {%t}"

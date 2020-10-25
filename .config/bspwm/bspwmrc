@@ -1,0 +1,77 @@
+#!/bin/sh
+
+### Bspwm Config ###
+
+_() { bspc config "$@";  }
+R() { bspc rule -a "$@"; }
+s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
+
+# desktops
+bspc monitor -d     1 2 3 4 5 6
+
+wmname LG3D
+
+# focus first/last desktops
+pgrep sxhkd || bspc desktop -f ^10 -f ^1
+
+# mouse
+_ pointer_modifier         mod4
+_ focus_follows_pointer    true
+_ pointer_follows_focus    false
+_ pointer_motion_interval  5
+
+
+# borders/gaps
+_ window_gap    15
+_ border_width  3
+_ single_monocle      true
+
+_ normal_border_color       '#171a1f'
+_ active_border_color       '#171a1f'
+_ focused_border_color      '#20242a'
+
+
+#
+#   rules
+#
+R feh       state=floating
+R freeze    state=floating
+R tabbed    state=floating
+R Gcolor3   state=floating
+R floating  state=floating
+
+
+### Autostart Apps ###
+
+# Key Daemon
+sxhkd -c ~/.config/bspwm/sxhkdrc & 
+
+# Polybar
+~/.config/polybar/launch.sh &
+#~/.bin/hidebar &
+
+# Dunst
+#~/.config/dunst/launch.sh &
+
+# Power Manager
+#xfce4-power-manager &
+
+# Restore Xresources
+#xrdb -load ~/.Xresources &
+
+# Background
+feh --bg-fill ~/Documents/wall.jpg &
+
+# Compositor
+picom &
+
+# Network Manager
+# nm-applet &
+
+# Handles cursor problem
+xsetroot -cursor_name left_ptr &
+
+# Load Bitmap Fonts
+xset +fp ~/.local/share/fonts &
+xset fp rehash &
+xset fp+ /usr/share/fonts/bitmap &

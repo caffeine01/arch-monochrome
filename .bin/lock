@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Lock command for lockscreen (requires i3lock)
+
+source ~/.config/i3lock/i3lockrc
+
+blank=33000000
+
+khl="$(~/.bin/colorctl -o -$delta -h ${rc:0:6})${rc: -2}"
+bshl="$(~/.bin/colorctl -o +$delta -h ${rc:0:6})${rc: -2}"
+
+i3lock --blur $blur \
+	   --verifsize=16 \
+	   --veriftext="..." \
+	   --radius $radius \
+	   --ring-width $width \
+	   --indicator --clock \
+	   --timesize=$timesize \
+	   --datesize=$datesize \
+	   --timestr="%I:%M" \
+	   --datestr="%B %d, %Y" \
+	   --linecolor=$blank \
+	   --insidecolor=$ic --ringcolor=$rc \
+	   --datecolor=$tc --timecolor=$tc \
+	   --separatorcolor=$rc --keyhlcolor=${khl#\#} \
+	   --bshlcolor=${bshl#\#} \
+	   --verifcolor=$tc --wrongcolor=$tc \
+	   --ringvercolor=${rvc:-$rc} --ringwrongcolor=$wc \
+	   --insidevercolor=$ic --insidewrongcolor=$ic \

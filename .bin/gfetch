@@ -1,0 +1,63 @@
+#!/bin/sh
+
+# Term stolen from gk
+# https://github.com/6gk/fet.sh/blob/d31ae95231d640f0c4e6c48fd2918fc6dd88dd84/fet.sh#L11-L26
+while [ ! "$term" ]; do
+	while IFS=':	' read -r key val; do
+		case $key in
+			PPid) ppid=$val; break;;
+		esac
+	done < "/proc/${ppid:-$PPID}/status"
+
+	read -r name < "/proc/$ppid/comm"
+	case $name in
+		*sh) ;;
+		"${0##*/}") ;;
+		*[Ll]ogin*|*init*) term=linux;;
+		*) term="$name";;
+	esac
+done
+
+
+
+## WM Name
+id_bloat=$(xprop -root _NET_SUPPORTING_WM_CHECK)
+id=${id_bloat##* }
+wm_bloat=$(xprop -id "$id" _NET_WM_NAME)
+
+## Get system info
+#user="${USER}@$(hostname)"
+distro=$(. /etc/os-release ; echo "$ID")
+#kernel="$(uname -sr | sed 's/-.*//')"
+#uptime="$(uptime -p | sed 's/up //')"
+shell="$(basename ${SHELL})"
+packages="$(pacman -Qq | wc -l)"
+wm="$(echo $wm_bloat | cut -d'"' -f 2)"
+
+
+
+bold="$(tput bold)"
+white="$(tput setaf 7)"
+yellow="$(tput setaf 12)"
+red="$(tput setaf 1)"
+blue="$(tput setaf 4)"
+green="$(tput setaf 2)"
+orange="$(tput setaf 8)"
+violet="$(tput setaf 5)"
+cyan="$(tput setaf 6)"
+reset="$(tput sgr0)"
+cbg="${reset}${bold}${bgaccent}${white}"
+cr="${reset}"
+c0="${reset}${bold}"
+c1="${reset}${accent}"
+
+## Output
+
+cat <<EOF
+${c0}${cyan}      ----      ${c0}${blue}${c0}${yellow} os ${reset}${c0}${blue}  ${cr}${white}${distro}${reset} 
+${c0}${cyan}     / O O\     ${c0}${blue}${c0}${yellow} wm ${reset}${c0}${blue}  ${cr}${white}${wm}${reset}
+${c0}${cyan}    |      |    ${c0}${blue}${c0}${yellow} tm ${reset}${c0}${blue}  ${cr}${white}${term}${reset}
+${c0}${cyan}    |/\/\/\|    ${c0}${blue}${c0}${yellow} pk ${reset}${c0}${blue}  ${cr}${white}${packages}${reset}
+${c0}${orange}   ----------   ${c0}${blue}${c0}${yellow} sh ${reset}${c0}${blue}  ${cr}${white}${shell}${reset}
+
+EOF
