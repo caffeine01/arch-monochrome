@@ -19,6 +19,6 @@ My monochromatic rice for BSPWM on arch linux, complete with: Custom GTK theme, 
 
 # Dependencies
 ```
-sudo pacman -Sy polybar rofi picom firefox thunar mpd cava bspwm sxhkd ncmpcpp kitty fish neovim
-yay -S betterdiscordctl-git
+sudo pacman -Sy rofi picom firefox thunar mpd bspwm sxhkd ncmpcpp kitty fish neovim
+yay -S betterdiscordctl-git cava polybar
 ```
