@@ -23,9 +23,9 @@ super + t
 super + y
 	flameshot gui & disown
 
-# rofi logout
+# rofi full menu
 super + x
-	~/.config/rofi/power/powermenu.sh
+	~/.bin/menu_full
 
 # lock
 super + l 
