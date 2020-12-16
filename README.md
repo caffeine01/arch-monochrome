@@ -4,6 +4,7 @@ My monochromatic rice for BSPWM on arch linux, complete with: Custom GTK theme, 
 # IF YOU ARE GOING TO REUPLOAD THIS PLEASE GIVE ME VISIBLE CREDIT.
 
 # Preview
+![alt text](https://host.juicehq.xyz/uploads/b4fa1db0-5e4d-4990-a945-3d3e58e43468/wKrPCcs5.png)
 ![alt text](https://raw.githubusercontent.com/Juicyexe/arch-monochrome/main/img/fuckingfinally.png?raw=true)
 
 # System Info
