@@ -48,25 +48,12 @@ sxhkd -c ~/.config/bspwm/sxhkdrc &
 
 # Polybar
 ~/.config/polybar/launch.sh &
-#~/.bin/hidebar &
-
-# Dunst
-#~/.config/dunst/launch.sh &
-
-# Power Manager
-#xfce4-power-manager &
-
-# Restore Xresources
-#xrdb -load ~/.Xresources &
 
 # Background
 feh --bg-fill ~/Documents/wall.jpg &
 
 # Compositor
-picom &
-
-# Network Manager
-# nm-applet &
+picom --experimental-backend&
 
 # Handles cursor problem
 xsetroot -cursor_name left_ptr &
